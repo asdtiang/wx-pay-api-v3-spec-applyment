@@ -49,8 +49,8 @@
 
 # 欢迎大家打赏
 
-![微信](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/raw/master/img/wx.jpg)        
+![微信](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/blob/master/img/wx.jpg)        
 
 
-![支付宝](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/raw/master/img/al.jpg)        
+![支付宝](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/blob/master/img/al.jpg)        
         

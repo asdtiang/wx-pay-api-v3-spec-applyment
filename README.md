@@ -49,9 +49,16 @@
 
 # 欢迎大家打赏
 
-![微信](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/raw/master/img/wx.jpg)    
-![微信](https://www.asdtiang.org/wp-content/uploads/2020/07/wx.jpg)    
+<p align="center">
+  <a href="https://www.asdtiang.org/wp-content/uploads/2020/07/wx.jpg">
+    <img src="https://www.asdtiang.org/wp-content/uploads/2020/07/wx.jpg" 
+    alt="" width="251" height="350">
+  </a>
+</p>
 
-![支付宝](https://www.asdtiang.org/wp-content/uploads/2020/07/al.jpg)   
-![支付宝](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/raw/master/img/al.jpg)        
-        
+<p align="center">
+  <a href="https://www.asdtiang.org/wp-content/uploads/2020/07/al.jpg">
+    <img src="https://www.asdtiang.org/wp-content/uploads/2020/07/al.jpg" 
+    alt="" width="251" height="350">
+  </a>
+</p>

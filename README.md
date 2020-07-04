@@ -32,6 +32,9 @@ mvn clean deploy -DskipTests
    /**
    如果缓存有图片mediaId,则不用再上传，这里的图片事先存储到阿里云，这只是一个示例
    **/
+   
+   
+   
    private String getWxImageId(String aliyunOssName) throws IOException {
         String mediaId = redisCache.getCacheObject(WxConstants.PAYMENT_APPLYMENT_MEDIA_REDIS_CACHE_PREFIX + aliyunOssName);
         if (StringUtils.isBlank(mediaId)) {

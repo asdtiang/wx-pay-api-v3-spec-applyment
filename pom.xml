@@ -75,31 +75,5 @@
     </repository>
   </repositories>
 
-  <profiles>
-    <profile>
-      <id>rdc-private-repo</id>
-      <repositories>
-        <repository>
-          <id>rdc-releases</id>
-          <url>https://repo.rdc.aliyun.com/repository/130963-release-QTObmK/</url>
-        </repository>
-        <repository>
-          <id>rdc-snapshots</id>
-          <url>https://repo.rdc.aliyun.com/repository/130963-snapshot-40h88p/</url>
-        </repository>
-      </repositories>
-    </profile>
-  </profiles>
-
-  <distributionManagement>
-    <repository>
-      <id>rdc-releases</id>
-      <url>https://repo.rdc.aliyun.com/repository/130963-release-QTObmK/</url>
-    </repository>
-    <snapshotRepository>
-      <id>rdc-snapshots</id>
-      <url>https://repo.rdc.aliyun.com/repository/130963-snapshot-40h88p/</url>
-    </snapshotRepository>
-  </distributionManagement>
 
 </project>

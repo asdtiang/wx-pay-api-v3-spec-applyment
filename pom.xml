@@ -5,7 +5,7 @@
 
 
   <groupId>com.xiangmitech.wx</groupId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <artifactId>wx-pay-api-v3-spec-applyment</artifactId>
   <packaging>jar</packaging>
 

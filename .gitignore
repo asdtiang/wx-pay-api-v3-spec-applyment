@@ -1,0 +1,9 @@
+/target/
+/.settings/
+*.project
+*.classpath
+application.yml
+/.idea/
+*.iml
+/src/main/resources/cert/
+/src/main/test

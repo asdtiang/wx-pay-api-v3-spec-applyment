@@ -8,6 +8,7 @@ mvn clean deploy -DskipTests
 
 使用说明：
 
+```java 
 
         ApplymentInfo applymentInfo = new ApplymentInfo();
 
@@ -44,5 +45,7 @@ mvn clean deploy -DskipTests
         }
         return mediaId;
     }
+    
+```
         
         

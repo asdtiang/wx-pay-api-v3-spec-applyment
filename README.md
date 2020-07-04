@@ -3,8 +3,6 @@
 
 微信api v3 特约商户进件集成sdk
 
-mvn clean deploy -DskipTests
-
 
 使用说明：
 
@@ -47,5 +45,12 @@ mvn clean deploy -DskipTests
     }
     
 ```
-        
+
+
+# 欢迎大家打赏
+
+![微信](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/raw/master/img/wx.jpg)        
+
+
+![支付宝](https://github.com/asdtiang/wx-pay-api-v3-spec-applyment/raw/master/img/al.jpg)        
         

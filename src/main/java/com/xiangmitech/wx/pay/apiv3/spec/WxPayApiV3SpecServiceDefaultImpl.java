@@ -92,7 +92,11 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
     if (response.getStatusLine().getStatusCode() == 200) {
       log.info("result---->" + result);
       JsonNode dataNode = objectMapper.readTree(result).get("applyment_id");
-      return dataNode.asText();
+      if (dataNode == null) {
+        return result;
+      } else {
+        return dataNode.asText();
+      }
     } else {
       log.warn("result error---->" + result);
       return null;

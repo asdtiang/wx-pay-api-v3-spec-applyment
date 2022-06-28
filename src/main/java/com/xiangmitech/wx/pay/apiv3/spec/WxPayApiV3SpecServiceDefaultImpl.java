@@ -99,7 +99,7 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
       }
     } else {
       log.warn("result error---->" + result);
-      return null;
+      return result;
     }
   }
 

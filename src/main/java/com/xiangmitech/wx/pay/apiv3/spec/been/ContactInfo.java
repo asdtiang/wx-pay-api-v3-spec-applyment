@@ -1,6 +1,8 @@
 package com.xiangmitech.wx.pay.apiv3.spec.been;
 
 import com.xiangmitech.wx.pay.apiv3.spec.anno.SpecEncrypt;
+import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.CardInfoType;
+import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.IdentityInfoIdDocType;
 
 /**
  * 超级管理员需在开户后进行签约，并接收日常重要管理信息和进行资金操作，请确定其为商户法定代表人或负责人。
@@ -10,11 +12,16 @@ import com.xiangmitech.wx.pay.apiv3.spec.anno.SpecEncrypt;
  **/
 public class ContactInfo {
 
+  private CardInfoType infoType;
+
   /**
    * 超级管理员姓名
    */
   @SpecEncrypt
   private String contactName;
+
+  private IdentityInfoIdDocType contactIdDocType;
+
   /**
    * 超级管理员身份证件号码
    * 1、“超级管理员身份证号码”与“超级管理员微信openid”，二选一必填。
@@ -23,6 +30,17 @@ public class ContactInfo {
    */
   @SpecEncrypt
   private String contactIdNumber;
+
+  private String contactIdDocCopy;
+
+  private String contactIdDocCopyBack;
+
+  private String contactPeriodBegin;
+
+  private String contactPeriodEnd;
+
+  private String businessAuthorizationLetter;
+
   /**
    * 超级管理员微信openid
    * 1、“超级管理员身份证件号码”与“超级管理员微信openid”，二选一必填。
@@ -80,5 +98,61 @@ public class ContactInfo {
 
   public void setContactEmail(String contactEmail) {
     this.contactEmail = contactEmail;
+  }
+
+  public CardInfoType getInfoType() {
+    return infoType;
+  }
+
+  public void setInfoType(CardInfoType infoType) {
+    this.infoType = infoType;
+  }
+
+  public IdentityInfoIdDocType getContactIdDocType() {
+    return contactIdDocType;
+  }
+
+  public void setContactIdDocType(IdentityInfoIdDocType contactIdDocType) {
+    this.contactIdDocType = contactIdDocType;
+  }
+
+  public String getContactIdDocCopy() {
+    return contactIdDocCopy;
+  }
+
+  public void setContactIdDocCopy(String contactIdDocCopy) {
+    this.contactIdDocCopy = contactIdDocCopy;
+  }
+
+  public String getContactIdDocCopyBack() {
+    return contactIdDocCopyBack;
+  }
+
+  public void setContactIdDocCopyBack(String contactIdDocCopyBack) {
+    this.contactIdDocCopyBack = contactIdDocCopyBack;
+  }
+
+  public String getContactPeriodBegin() {
+    return contactPeriodBegin;
+  }
+
+  public void setContactPeriodBegin(String contactPeriodBegin) {
+    this.contactPeriodBegin = contactPeriodBegin;
+  }
+
+  public String getContactPeriodEnd() {
+    return contactPeriodEnd;
+  }
+
+  public void setContactPeriodEnd(String contactPeriodEnd) {
+    this.contactPeriodEnd = contactPeriodEnd;
+  }
+
+  public String getBusinessAuthorizationLetter() {
+    return businessAuthorizationLetter;
+  }
+
+  public void setBusinessAuthorizationLetter(String businessAuthorizationLetter) {
+    this.businessAuthorizationLetter = businessAuthorizationLetter;
   }
 }

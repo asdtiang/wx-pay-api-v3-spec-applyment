@@ -1,6 +1,7 @@
 package com.xiangmitech.wx.pay.apiv3.spec.been;
 
 import com.xiangmitech.wx.pay.apiv3.spec.anno.SpecEncrypt;
+import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.CardInfoType;
 import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.IdentityInfoIdDocType;
 
 /**
@@ -9,10 +10,17 @@ import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.IdentityInfoIdDocType;
  **/
 public class IdentityInfo {
 
-  private IdentityInfoIdDocType idDocType; // TODO 其它类型
+  private CardInfoType idHolderType;
+
+  private IdentityInfoIdDocType idDocType;
+
+  private String authorizeLetterCopy;
 
   @SpecEncrypt
   private IdCardInfo idCardInfo;
+
+  @SpecEncrypt
+  private IdCardInfo idDocInfo;
 
   private boolean owner = true;
 
@@ -40,5 +48,29 @@ public class IdentityInfo {
 
   public void setOwner(boolean owner) {
     this.owner = owner;
+  }
+
+  public CardInfoType getIdHolderType() {
+    return idHolderType;
+  }
+
+  public void setIdHolderType(CardInfoType idHolderType) {
+    this.idHolderType = idHolderType;
+  }
+
+  public String getAuthorizeLetterCopy() {
+    return authorizeLetterCopy;
+  }
+
+  public void setAuthorizeLetterCopy(String authorizeLetterCopy) {
+    this.authorizeLetterCopy = authorizeLetterCopy;
+  }
+
+  public IdCardInfo getIdDocInfo() {
+    return idDocInfo;
+  }
+
+  public void setIdDocInfo(IdCardInfo idDocInfo) {
+    this.idDocInfo = idDocInfo;
   }
 }

@@ -9,92 +9,92 @@ import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.IdentityInfoIdDocType;
  **/
 public class UboInfo {
 
-  private IdentityInfoIdDocType idType;
+  private IdentityInfoIdDocType uboIdDocType;
 
   /**
    * 正面
    */
-  private String idCardCopy;
+  private String uboIdDocCopy;
 
   /**
    * 反面
    */
-  private String idCardNational;
+  private String uboIdDocCopyBack;
 
-  private String idDocCopy;
-
-  @SpecEncrypt
-  private String name;
+  private String uboIdDocAddress;
 
   @SpecEncrypt
-  private String idCardNumber;
+  private String uboIdDocName;
 
-  private String idPeriodBegin;
+  @SpecEncrypt
+  private String uboIdDocNumber;
 
-  private String idPeriodEnd;
+  private String uboPeriodBegin;
+
+  private String ublPeriodEnd;
 
 
-  public IdentityInfoIdDocType getIdType() {
-    return idType;
+  public IdentityInfoIdDocType getUboIdDocType() {
+    return uboIdDocType;
   }
 
-  public void setIdType(IdentityInfoIdDocType idType) {
-    this.idType = idType;
+  public void setUboIdDocType(IdentityInfoIdDocType uboIdDocType) {
+    this.uboIdDocType = uboIdDocType;
   }
 
-  public String getIdCardCopy() {
-    return idCardCopy;
+  public String getUboIdDocCopy() {
+    return uboIdDocCopy;
   }
 
-  public void setIdCardCopy(String idCardCopy) {
-    this.idCardCopy = idCardCopy;
+  public void setUboIdDocCopy(String uboIdDocCopy) {
+    this.uboIdDocCopy = uboIdDocCopy;
   }
 
-  public String getIdCardNational() {
-    return idCardNational;
+  public String getUboIdDocCopyBack() {
+    return uboIdDocCopyBack;
   }
 
-  public void setIdCardNational(String idCardNational) {
-    this.idCardNational = idCardNational;
+  public void setUboIdDocCopyBack(String uboIdDocCopyBack) {
+    this.uboIdDocCopyBack = uboIdDocCopyBack;
   }
 
-  public String getIdDocCopy() {
-    return idDocCopy;
+  public String getUboIdDocAddress() {
+    return uboIdDocAddress;
   }
 
-  public void setIdDocCopy(String idDocCopy) {
-    this.idDocCopy = idDocCopy;
+  public void setUboIdDocAddress(String uboIdDocAddress) {
+    this.uboIdDocAddress = uboIdDocAddress;
   }
 
-  public String getName() {
-    return name;
+  public String getUboIdDocName() {
+    return uboIdDocName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setUboIdDocName(String uboIdDocName) {
+    this.uboIdDocName = uboIdDocName;
   }
 
-  public String getIdCardNumber() {
-    return idCardNumber;
+  public String getUboIdDocNumber() {
+    return uboIdDocNumber;
   }
 
-  public void setIdCardNumber(String idCardNumber) {
-    this.idCardNumber = idCardNumber;
+  public void setUboIdDocNumber(String uboIdDocNumber) {
+    this.uboIdDocNumber = uboIdDocNumber;
   }
 
-  public String getIdPeriodBegin() {
-    return idPeriodBegin;
+  public String getUboPeriodBegin() {
+    return uboPeriodBegin;
   }
 
-  public void setIdPeriodBegin(String idPeriodBegin) {
-    this.idPeriodBegin = idPeriodBegin;
+  public void setUboPeriodBegin(String uboPeriodBegin) {
+    this.uboPeriodBegin = uboPeriodBegin;
   }
 
-  public String getIdPeriodEnd() {
-    return idPeriodEnd;
+  public String getUblPeriodEnd() {
+    return ublPeriodEnd;
   }
 
-  public void setIdPeriodEnd(String idPeriodEnd) {
-    this.idPeriodEnd = idPeriodEnd;
+  public void setUblPeriodEnd(String ublPeriodEnd) {
+    this.ublPeriodEnd = ublPeriodEnd;
   }
 }

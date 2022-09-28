@@ -3,6 +3,8 @@ package com.xiangmitech.wx.pay.apiv3.spec.been;
 import com.xiangmitech.wx.pay.apiv3.spec.anno.SpecEncrypt;
 import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.SubjectType;
 
+import java.util.List;
+
 /**
  * @author abel lee
  * @create 2020-05-25 11:15
@@ -23,12 +25,10 @@ public class SubjectInfo {
 
   private CertificateInfo certificateInfo;
 
-  private OrganizationInfo organizationInfo;
-
   private String certificateLetterCopy;
 
   @SpecEncrypt
-  private UboInfo uboInfo;
+  private List<UboInfo> uboInfoList;
 
 
   public CertificateInfo getCertificateInfo() {
@@ -39,13 +39,6 @@ public class SubjectInfo {
     this.certificateInfo = certificateInfo;
   }
 
-  public OrganizationInfo getOrganizationInfo() {
-    return organizationInfo;
-  }
-
-  public void setOrganizationInfo(OrganizationInfo organizationInfo) {
-    this.organizationInfo = organizationInfo;
-  }
 
   public String getCertificateLetterCopy() {
     return certificateLetterCopy;
@@ -55,12 +48,12 @@ public class SubjectInfo {
     this.certificateLetterCopy = certificateLetterCopy;
   }
 
-  public UboInfo getUboInfo() {
-    return uboInfo;
+  public List<UboInfo> getUboInfoList() {
+    return uboInfoList;
   }
 
-  public void setUboInfo(UboInfo uboInfo) {
-    this.uboInfo = uboInfo;
+  public void setUboInfoList(List<UboInfo> uboInfoList) {
+    this.uboInfoList = uboInfoList;
   }
 
   public SubjectType getSubjectType() {

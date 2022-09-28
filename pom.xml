@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
 
-  <groupId>com.xiangmitech.wx</groupId>
+  <groupId>com.github.asdtiang</groupId>
   <version>1.0.3</version>
   <artifactId>wx-pay-api-v3-spec-applyment</artifactId>
   <packaging>jar</packaging>

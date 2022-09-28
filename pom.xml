@@ -5,7 +5,7 @@
 
 
   <groupId>com.github.asdtiang</groupId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <artifactId>wx-pay-api-v3-spec-applyment</artifactId>
   <packaging>jar</packaging>
 

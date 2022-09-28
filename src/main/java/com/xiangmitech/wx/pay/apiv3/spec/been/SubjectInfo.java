@@ -25,30 +25,8 @@ public class SubjectInfo {
   @SpecEncrypt
   private IdentityInfo identityInfo;
 
-  private CertificateInfo certificateInfo;
-
-  private String certificateLetterCopy;
-
   @SpecEncrypt
   private List<UboInfo> uboInfoList;
-
-
-  public CertificateInfo getCertificateInfo() {
-    return certificateInfo;
-  }
-
-  public void setCertificateInfo(CertificateInfo certificateInfo) {
-    this.certificateInfo = certificateInfo;
-  }
-
-
-  public String getCertificateLetterCopy() {
-    return certificateLetterCopy;
-  }
-
-  public void setCertificateLetterCopy(String certificateLetterCopy) {
-    this.certificateLetterCopy = certificateLetterCopy;
-  }
 
   public List<UboInfo> getUboInfoList() {
     return uboInfoList;
@@ -83,4 +61,11 @@ public class SubjectInfo {
   }
 
 
+  public Boolean getFinanceInstitution() {
+    return financeInstitution;
+  }
+
+  public void setFinanceInstitution(Boolean financeInstitution) {
+    this.financeInstitution = financeInstitution;
+  }
 }

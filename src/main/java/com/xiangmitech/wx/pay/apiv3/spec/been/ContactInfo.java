@@ -12,7 +12,7 @@ import com.xiangmitech.wx.pay.apiv3.spec.enumbeen.IdentityInfoIdDocType;
  **/
 public class ContactInfo {
 
-  private CardInfoType infoType;
+  private CardInfoType contactType;
 
   /**
    * 超级管理员姓名
@@ -100,12 +100,12 @@ public class ContactInfo {
     this.contactEmail = contactEmail;
   }
 
-  public CardInfoType getInfoType() {
-    return infoType;
+  public CardInfoType getContactType() {
+    return contactType;
   }
 
-  public void setInfoType(CardInfoType infoType) {
-    this.infoType = infoType;
+  public void setContactType(CardInfoType contactType) {
+    this.contactType = contactType;
   }
 
   public IdentityInfoIdDocType getContactIdDocType() {

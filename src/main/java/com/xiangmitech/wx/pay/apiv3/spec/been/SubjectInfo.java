@@ -13,6 +13,8 @@ public class SubjectInfo {
 
   private SubjectType subjectType;
 
+  private Boolean financeInstitution;
+
   /**
    * 营业执照
    * 1、主体为个体户/企业，必填。

@@ -24,6 +24,9 @@ public class IdCardInfo {
   @SpecEncrypt
   private String idCardNumber;
 
+  @SpecEncrypt
+  private String idCardAddress;
+
   private String cardPeriodBegin;
 
   private String cardPeriodEnd;
@@ -74,5 +77,13 @@ public class IdCardInfo {
 
   public void setCardPeriodEnd(String cardPeriodEnd) {
     this.cardPeriodEnd = cardPeriodEnd;
+  }
+
+  public String getIdCardAddress() {
+    return idCardAddress;
+  }
+
+  public void setIdCardAddress(String idCardAddress) {
+    this.idCardAddress = idCardAddress;
   }
 }

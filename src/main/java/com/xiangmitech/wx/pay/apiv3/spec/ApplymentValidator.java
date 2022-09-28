@@ -68,10 +68,6 @@ public class ApplymentValidator {
         return "个体户经营者/法人姓名不能为空！";
       }
     }
-    if (subjectInfo.getCertificateInfo() != null) {
-      CertificateInfo certificateInfo = subjectInfo.getCertificateInfo();
-      //TODO check
-    }
     //TODO 其它类型 SubjectType
     IdentityInfo identityInfo = subjectInfo.getIdentityInfo();
     IdentityInfoIdDocType identityInfoIdDocType = identityInfo.getIdDocType();

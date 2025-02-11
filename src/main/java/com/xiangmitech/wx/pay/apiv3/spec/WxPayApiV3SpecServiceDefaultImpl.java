@@ -120,9 +120,8 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
     HttpResponse<ApplymentStatusResult> response = httpClient.get(headers,url,ApplymentStatusResult.class);
     log.info(" result source->{}", response.toString());
     log.info("result---->{}", response);
-    ApplymentStatusResult statusResult = response.getServiceResponse();
-   // statusResult.setSourceJson(result);
-    return statusResult;
+      // statusResult.setSourceJson(result);
+    return response.getServiceResponse();
   }
 
   @Override

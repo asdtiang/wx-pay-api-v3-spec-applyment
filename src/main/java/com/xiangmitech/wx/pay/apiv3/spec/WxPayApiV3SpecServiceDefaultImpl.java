@@ -13,6 +13,7 @@ import com.wechat.pay.java.service.file.FileUploadService;
 import com.wechat.pay.java.service.file.model.FileUploadResponse;
 import com.xiangmitech.wx.pay.apiv3.spec.been.ApplymentInfo;
 import com.xiangmitech.wx.pay.apiv3.spec.been.BankAccountInfo;
+import com.xiangmitech.wx.pay.apiv3.spec.been.result.ApplymentResult;
 import com.xiangmitech.wx.pay.apiv3.spec.been.result.ApplymentStatusResult;
 import com.xiangmitech.wx.pay.apiv3.spec.been.result.BankAccountResult;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -99,15 +100,13 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
     RequestBody body = new JsonRequestBody.Builder().body(submitJson).build();
 
     log.info("submit applymentInfo json---->\n" + submitJson);
-    HttpResponse response = httpClient.post(headers,APPLYMENT_URL,body,Object.class);
-    String result = response.getServiceResponse().toString();
-    log.info(" result source->{}", result);
-    log.info("result---->" + result);
-    JsonNode dataNode = objectMapper.readTree(result).get("applyment_id");
-    if (dataNode == null) {
-      return result;
+    HttpResponse<ApplymentResult> response = httpClient.post(headers,APPLYMENT_URL,body, ApplymentResult.class);
+    log.info(" result source->{}", response);
+    ApplymentResult result = response.getServiceResponse();
+    if (result != null) {
+      return result.getApplymentId();
     } else {
-      return dataNode.asText();
+      return null;
     }
   }
 
@@ -118,12 +117,11 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
     // 设置请求头
     headers.addHeader("Content-Type", "application/json");
     headers.addHeader("Accept", "application/json");
-    HttpResponse response = httpClient.get(headers,url,Object.class);
-    String result = response.getServiceResponse().toString();
-    log.info(" result source->{}", result);
-    log.info("result---->" + result);
-    ApplymentStatusResult statusResult = objectMapper.readValue(result, ApplymentStatusResult.class);
-    statusResult.setSourceJson(result);
+    HttpResponse<ApplymentStatusResult> response = httpClient.get(headers,url,ApplymentStatusResult.class);
+    log.info(" result source->{}", response.toString());
+    log.info("result---->{}", response);
+    ApplymentStatusResult statusResult = response.getServiceResponse();
+   // statusResult.setSourceJson(result);
     return statusResult;
   }
 
@@ -149,12 +147,10 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
     // 设置请求头
     headers.addHeader("Content-Type", "application/json");
     headers.addHeader("Accept", "application/json");
-    HttpResponse response = httpClient.get(headers,url,Object.class);
-    String result = response.getServiceResponse().toString();
-
-    log.info("result---->" + result);
-    BankAccountResult bankAccountResult = objectMapper.readValue(result, BankAccountResult.class);
-    bankAccountResult.setSourceJson(result);
+    HttpResponse<BankAccountResult> response = httpClient.get(headers,url,BankAccountResult.class);
+    log.info("result---->,{}" , response);
+    BankAccountResult bankAccountResult = response.getServiceResponse();
+    //bankAccountResult.setSourceJson(result);
     return bankAccountResult;
   }
 

@@ -1,5 +1,7 @@
 [![Release](https://jitpack.io/v/User/Repo.svg)](https://jitpack.io/#asdtiang/wx-pay-api-v3-spec-applyment)
 
+## 注意：2.0版本切换为微信平台公钥
+
 
 集成maven repo
 

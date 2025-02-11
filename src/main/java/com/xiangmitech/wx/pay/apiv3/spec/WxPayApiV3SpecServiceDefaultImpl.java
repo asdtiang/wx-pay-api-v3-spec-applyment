@@ -114,10 +114,11 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
   @Override
   public ApplymentStatusResult applymentStatus(String businessCode) throws IOException {
     HttpHeaders headers = new HttpHeaders();
+    String url = SEARCH_APPLY_STATUS_URL.replace("{business_code}", businessCode);
     // 设置请求头
     headers.addHeader("Content-Type", "application/json");
     headers.addHeader("Accept", "application/json");
-    HttpResponse response = httpClient.get(headers,SEARCH_APPLY_STATUS_URL,Object.class);
+    HttpResponse response = httpClient.get(headers,url,Object.class);
     String result = response.getServiceResponse().toString();
     log.info(" result source->{}", result);
     log.info("result---->" + result);
@@ -130,12 +131,12 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
   public boolean changeSubBank(String subMchid, BankAccountInfo bankAccountInfo) throws IOException {
     // 设置请求头
     HttpHeaders headers = new HttpHeaders();
-
+    String url = CHANGE_SUB_MCH_BANK_URL.replace("{sub_mchid}", subMchid)
     headers.addHeader("Content-Type", "application/json");
     headers.addHeader("Accept", "application/json");
     RequestBody body = new JsonRequestBody.Builder().body(objectMapper.writeValueAsString(bankAccountInfo)).build();
 
-    HttpResponse response = httpClient.post(headers,CHANGE_SUB_MCH_BANK_URL,body,Object.class);
+    HttpResponse response = httpClient.post(headers,url,body,Object.class);
     String result = response.getServiceResponse().toString();
     log.info(" result source->{}", result);
     return true;
@@ -144,10 +145,11 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
   @Override
   public BankAccountResult querySubMch(String submchId) throws IOException {
     HttpHeaders headers = new HttpHeaders();
+    String url = QUERY_SUB_MCH_BANK_URL.replace("{sub_mchid}", submchId);
     // 设置请求头
     headers.addHeader("Content-Type", "application/json");
     headers.addHeader("Accept", "application/json");
-    HttpResponse response = httpClient.get(headers,QUERY_SUB_MCH_BANK_URL,Object.class);
+    HttpResponse response = httpClient.get(headers,url,Object.class);
     String result = response.getServiceResponse().toString();
 
     log.info("result---->" + result);

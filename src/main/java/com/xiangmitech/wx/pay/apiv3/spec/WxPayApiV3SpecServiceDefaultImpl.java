@@ -131,7 +131,7 @@ public class WxPayApiV3SpecServiceDefaultImpl implements WxPayApiV3SpecService {
   public boolean changeSubBank(String subMchid, BankAccountInfo bankAccountInfo) throws IOException {
     // 设置请求头
     HttpHeaders headers = new HttpHeaders();
-    String url = CHANGE_SUB_MCH_BANK_URL.replace("{sub_mchid}", subMchid)
+    String url = CHANGE_SUB_MCH_BANK_URL.replace("{sub_mchid}", subMchid);
     headers.addHeader("Content-Type", "application/json");
     headers.addHeader("Accept", "application/json");
     RequestBody body = new JsonRequestBody.Builder().body(objectMapper.writeValueAsString(bankAccountInfo)).build();

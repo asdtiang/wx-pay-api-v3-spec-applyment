@@ -15,7 +15,7 @@ public class PayApiTest {
 
   @Test
   public void testApplyment() throws IOException {
-    File file = new File("D:\\openSource\\wx-pay-api-v3-spec\\src\\main\\resources\\cert\\apiclient_cert.pem");
+    File wxPublicKey = new File("D:\\openSource\\wx-pay-api-v3-spec\\src\\main\\resources\\cert\\pub_key.pem");
 
     File privateKeyFile = new File("D:\\openSource\\wx-pay-api-v3-spec\\src\\main\\resources\\cert\\apiclient_key.pem");
 
@@ -23,9 +23,10 @@ public class PayApiTest {
     WxPayApiV3SpecConfig wxPayApiV3SpecConfig = new WxPayApiV3SpecConfig();
     wxPayApiV3SpecConfig.setApiV3Key("332de77defe04d4a85e5c19c2d058d89");
     wxPayApiV3SpecConfig.setMerchantId("1558891591");
-    wxPayApiV3SpecConfig.setMerchantSerialNumber("63E98230278F18DA4E0950AB50725562931B1132");
+    wxPayApiV3SpecConfig.setMerchantSerialNumber("3DCAB7204282575AB6092234A01A1F2E0AB8783F");
     wxPayApiV3SpecConfig.setPrivateKeyInputStream(new FileInputStream(privateKeyFile));
-    wxPayApiV3SpecConfig.setX509certificateInputStream(new FileInputStream(file));
+    wxPayApiV3SpecConfig.setWxPublicKeyInputStream(new FileInputStream(wxPublicKey));
+    wxPayApiV3SpecConfig.setWxPublicKeyId("PUB_KEY_ID_0115588915912025020800337100001553");
 
     WxPayApiV3SpecService wxPayApiV3SpecService = WxPayApiV3SpecFactory.getWxPayApiV3SpecService(wxPayApiV3SpecConfig);
 //    ApplymentInfo applymentInfo = new ApplymentInfo();
@@ -39,7 +40,7 @@ public class PayApiTest {
 //
 //    applymentInfo.setContactInfo(contactInfo);
 
-    String resultStr = wxPayApiV3SpecService.upload(new File("D:\\openSource\\wx-pay-api-v3-spec\\src\\main\\resources\\logo.png"));
+    String resultStr = wxPayApiV3SpecService.upload(new File("D:\\openSource\\wx-pay-api-v3-spec\\src\\main\\resources\\avatar-default.png"));
     System.out.println(resultStr);
 
   }

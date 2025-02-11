@@ -8,9 +8,13 @@ import java.io.InputStream;
  **/
 public class WxPayApiV3SpecConfig {
   /**
-   * 证书文件 .p12
+   *   微信公钥 pub_key.pem
    */
-  private InputStream x509certificateInputStream;
+  private InputStream wxPublicKeyInputStream;
+  /**
+   * 微信支付公钥ID
+   */
+  private String wxPublicKeyId;
   /**
    * 私钥文件  key.pem
    */
@@ -20,7 +24,7 @@ public class WxPayApiV3SpecConfig {
    */
   private String merchantId;
   /**
-   * 证书编号
+   * 商户证书编号
    */
   private String merchantSerialNumber;
   /**
@@ -28,12 +32,20 @@ public class WxPayApiV3SpecConfig {
    */
   private String apiV3Key;
 
-  public InputStream getX509certificateInputStream() {
-    return x509certificateInputStream;
+  public InputStream getWxPublicKeyInputStream() {
+    return wxPublicKeyInputStream;
   }
 
-  public void setX509certificateInputStream(InputStream x509certificateInputStream) {
-    this.x509certificateInputStream = x509certificateInputStream;
+  public void setWxPublicKeyInputStream(InputStream wxPublicKeyInputStream) {
+    this.wxPublicKeyInputStream = wxPublicKeyInputStream;
+  }
+
+  public String getWxPublicKeyId() {
+    return wxPublicKeyId;
+  }
+
+  public void setWxPublicKeyId(String wxPublicKeyId) {
+    this.wxPublicKeyId = wxPublicKeyId;
   }
 
   public InputStream getPrivateKeyInputStream() {

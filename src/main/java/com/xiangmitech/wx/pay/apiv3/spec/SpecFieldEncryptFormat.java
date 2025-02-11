@@ -1,5 +1,6 @@
 package com.xiangmitech.wx.pay.apiv3.spec;
 
+import com.wechat.pay.java.core.cipher.PrivacyEncryptor;
 import com.xiangmitech.wx.pay.apiv3.spec.anno.SpecEncrypt;
 
 import javax.crypto.BadPaddingException;
@@ -21,7 +22,7 @@ import java.util.Base64;
 public class SpecFieldEncryptFormat {
 
 
-  public static void encryptField(Object encryptObject, X509Certificate certificate) throws IllegalAccessException, IOException, IllegalBlockSizeException {
+  public static void encryptField(Object encryptObject, PrivacyEncryptor encryptor) throws IllegalAccessException, IOException, IllegalBlockSizeException {
     Class<?> infoClass = encryptObject.getClass();
     Field[] infoFieldArray = infoClass.getDeclaredFields();
     for (Field field : infoFieldArray) {
@@ -32,14 +33,14 @@ public class SpecFieldEncryptFormat {
           if (oldValue != null) {
             String oldStr = (String) oldValue;
             if (!oldStr.trim().equals("'")) {
-              field.set(encryptObject, rsaEncryptOAEP(oldStr, certificate));
+              field.set(encryptObject, rsaEncryptOAEP(oldStr, encryptor));
             }
           }
         } else {
           field.setAccessible(true);
           Object obj = field.get(encryptObject);
           if (obj != null) {
-            encryptField(field.get(encryptObject), certificate);
+            encryptField(field.get(encryptObject), encryptor);
           }
         }
       }
@@ -47,20 +48,8 @@ public class SpecFieldEncryptFormat {
   }
 
   //TODO 证书加密
-  public static String rsaEncryptOAEP(String message, X509Certificate certificate) throws IllegalBlockSizeException, IOException {
-    try {
-      Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-1AndMGF1Padding");
-      cipher.init(Cipher.ENCRYPT_MODE, certificate.getPublicKey());
-      byte[] data = message.getBytes("utf-8");
-      byte[] cipherdata = cipher.doFinal(data);
-      return Base64.getEncoder().encodeToString(cipherdata);
-    } catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
-      throw new RuntimeException("当前Java环境不支持RSA v1.5/OAEP", e);
-    } catch (InvalidKeyException e) {
-      throw new IllegalArgumentException("无效的证书", e);
-    } catch (IllegalBlockSizeException | BadPaddingException e) {
-      throw new IllegalBlockSizeException("加密原串的长度不能超过214字节");
-    }
+  public static String rsaEncryptOAEP(String message, PrivacyEncryptor encryptor) throws IllegalBlockSizeException, IOException {
+   return encryptor.encrypt(message);
   }
 
   public static String rsaDecryptOAEP(String ciphertext, PrivateKey privateKey)
